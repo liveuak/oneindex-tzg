@@ -1,5 +1,5 @@
 # OneIndex - TZG
-一个OneIndex改进版，保留原版简洁的简洁。   
+一个 OneIndex 分支改进版，保留原版的简洁。 
 原项目：[donwa/oneindex](https://github.com/donwa/oneindex)
 
 ## 功能：
@@ -8,18 +8,17 @@
 
 ## 示例站
 [TZG OneDrive](https://tzg6.app)   
-示例站正在使用[阿里云ECS](https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=4wz5xqgf) 及OneIndex - TZG。
 
 ## 跳转页面
-oneindex-tzg使用了自己的跳转页面进行跳转。如果你希望自己搭建一个跳转页面，请切换到"jump-page"分支，并下载"index.html"，然后找一个喜欢的地方进行部署。
+oneindex-tzg 使用了自己的跳转页面进行跳转。如果你希望搭建一个自己的跳转页面，请前往[TheZihanGu/OneIndex-TZG-Jump-page](https://github.com/TheZihanGu/OneIndex-TZG-Jump-page)进行查看。
 
 ## 安装运行
 
 ### 最低配置：
-* PHP 5.6+ 需打开curl支持  
-* OneDrive 账号 (个人、企业版或教育版/工作或学校帐户)  
-* OneIndex - TZG 程序   
-* 除中国大陆外的服务器/虚拟主机一台。建议使用[阿里云ECS](https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=4wz5xqgf)进行搭建。
+* PHP 5.6+ 需打开curl支持   
+* OneDrive 账号 (个人、企业版或教育版/工作或学校帐户), 暂不支持世纪互联代理   
+* oneindex-tzg 程序   
+* 除中国大陆外的服务器/虚拟主机一台。建议使用[阿里云ECS](https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=4wz5xqgf)进行搭建。   
 
 ## 配置：
 <img width="658" alt="image" src="https://raw.githubusercontent.com/donwa/oneindex/files/images/install.gif">  
