@@ -185,6 +185,8 @@ class AdminController{
 			// 非https,调用中转
 			$redirect_uri = 'https://oi.tzg6.app';
 		}
+		return view::load('install/install_1')->with('title','安装程序')
+			->with('redirect_uri', $redirect_uri);
 	}
 
 	function install_2(){
