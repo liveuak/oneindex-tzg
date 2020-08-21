@@ -9,7 +9,7 @@
 	  <h2>安装程序 <small>应用ID和机密</small></h2>
       <h4 class="doc-article-title">
 	    填入<code>应用程序密码</code>和<code>应用程序ID</code>,
-      	<a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade" target="_blank" class="mdui-btn mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe89e;</i> 前往应用注册</a>
+		<a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade"><small>前往 Azure Active Directory 注册应用</small></a>
       </h4>
 	<br>
 	<form action="" method="post">
