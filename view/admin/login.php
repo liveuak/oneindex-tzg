@@ -1,21 +1,19 @@
 <?php view::layout('install/layout')?>
-
 <?php view::begin('content');?>
-	
-<div class="mdui-container-fluid">
-	<div class="mdui-col-md-6 mdui-col-offset-md-3">
-	  <center><h4 class="mdui-typo-display-2-opacity">OneIndex管理</h4></center>
+
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+<br/>
+      <div class="container">
+	  <br><br><br>
+	  <h2>OneIndex 控制台 <small>请登录</small></h2>
 	  <form action="" method="post">
-		  <div class="mdui-textfield mdui-textfield-floating-label">
-		    <i class="mdui-icon material-icons">https</i>
-		    <label class="mdui-textfield-label">密码</label>
-		    <input name="password" class="mdui-textfield-input" type="password"/>
+		  <div class="form-group">
+		    <label>密码</label>
+		    <input name="password" class="form-control" type="password"/>
 		  </div>
 		  <br>
-		  <button type="submit" class="mdui-center mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme">
-		  	<i class="mdui-icon material-icons">fingerprint</i>
-		  	登录
-		  </button>
+		  <button class="btn btn-primary" type="submit">登录</button>
 	  </form>
 	</div>
 	
