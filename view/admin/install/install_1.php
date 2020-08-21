@@ -35,7 +35,7 @@
 		</div>
 		<br>
 	 <a class="btn btn-primary" type="button" href="?step=0">上一步</a>
-	 <button type="button" class="btn btn-primary" type="submit">下一步</button>
+	 <button class="btn btn-primary" type="submit">下一步</button>
 	</form>	
 </div>
 
