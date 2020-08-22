@@ -10,6 +10,7 @@ class AdminController{
 	  'cache_expire_time' => 3600,
 	  'cache_refresh_time' => 600,
 	  'root_path' => '?',
+	  'sharepoint_proxy' =>'',
 	  'show'=> array (
 	  	'stream'=>['txt'],
 	    'image' => ['bmp','jpg','jpeg','png','gif'],
@@ -60,6 +61,7 @@ class AdminController{
 			config('cache_expire_time', intval($_POST['cache_expire_time']));
 			$_POST['root_path'] = empty($_POST['root_path'])?'?':'';
 			config('root_path', $_POST['root_path']);
+			config('sharepoint_proxy', $_POST['sharepoint_proxy']);
 		}
 
 		$config = config('@base');
