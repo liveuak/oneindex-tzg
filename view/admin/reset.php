@@ -7,7 +7,8 @@
 		<meta name="renderer" content="webkit">
 		<meta name="theme-color" content="#3F51B5" />
 		<title>OneIndex-TZG重置页</title>
-		<link href="https://cdn.bootcss.com/mdui/0.4.2/css/mdui.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css" integrity="sha384-2PJ2u4NYg6jCNNpv3i1hK9AoAqODy6CdiC+gYiL2DVx+ku5wzJMFNdE3RoWfBIRP" crossorigin="anonymous"/>
+    	<script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js" integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+" crossorigin="anonymous"></script>
         </head>
 		
         <div class="mdui-p-a-2">
@@ -27,5 +28,4 @@
 			</div>
         </div>
 	</body>
-	<script src="https://cdn.bootcss.com/mdui/0.4.2/js/mdui.min.js"></script>
 </html>
