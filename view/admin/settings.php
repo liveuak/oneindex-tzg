@@ -90,6 +90,7 @@
 		<div class="mdui-textfield" style=<?php echo $config['sharepoint_proxy'] == "false"?'display:none':'display:inline';?>>>
 		  <h4>SharePoint Proxy 链接</h4>
 		  <input class="mdui-textfield-input" name="sharepoint_proxy_link" value="<?=@$config['sharepoint_proxy_link'];?>"/>
+		  <small>开启/关闭 SharePoint Proxy 后, 请<a href="./?/admin/cache">清除所有缓存</a>来使设置立即生效.</small>
 		</div>
 
 	   <button type="submit" class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-right">
