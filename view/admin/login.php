@@ -29,8 +29,7 @@
         }
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.5/examples/sign-in/signin.css" rel="stylesheet">
+    <link href="https://g.tzg6.com/oneindex/css/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
   <form action="" method="post" class="form-signin">
