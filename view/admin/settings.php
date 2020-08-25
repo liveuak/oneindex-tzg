@@ -71,6 +71,28 @@
 			  <i class="mdui-switch-icon"></i>
 		  </label>
 		</div>
+
+		<div class="mdui-textfield">
+		  <h4>开启 SharePoint Proxy (Beta)</h4>
+		  <label class="mdui-textfield-label"></label>
+		  <label class="mdui-switch">
+		  	  <input type="checkbox" name="sharepoint_proxy" value="?" <?php echo $config['sharepoint_proxy'] == "true"?'checked':'';?>/>
+			  <i class="mdui-switch-icon"></i>
+		  </label>
+		</div>
+
+		<div class="mdui-textfield" style=<?php echo $config['sharepoint_proxy'] == "false"?'display:none':'display:inline';?>>
+		  <h4>SharePoint 链接</h4>
+		  <input class="mdui-textfield-input" name="sharepoint_link" value="<?=@$config['sharepoint_link'];?>"/>
+		  <small>例: <code>xxxx-my.sharepoint.com</code></small>
+		</div>
+
+		<div class="mdui-textfield" style=<?php echo $config['sharepoint_proxy'] == "false"?'display:none':'display:inline';?>>>
+		  <h4>SharePoint Proxy 链接</h4>
+		  <input class="mdui-textfield-input" name="sharepoint_proxy_link" value="<?=@$config['sharepoint_proxy_link'];?>"/>
+		  <small>开启/关闭 SharePoint Proxy 后, 请<a href="./?/admin/cache">清除所有缓存</a>来使设置立即生效.</small>
+		</div>
+
 	   <button type="submit" class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-right">
 	   	<i class="mdui-icon material-icons">&#xe161;</i> 保存
 	   </button>

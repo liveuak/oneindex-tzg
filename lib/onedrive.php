@@ -104,16 +104,30 @@
 				$retry += 1;
 				return self::dir_next_page($request, $items, $retry);
 			}
-			
-			foreach((array)$data['value'] as $item){
-				//var_dump($item);
-				$items[$item['name']] = array(
-					'name'=>$item['name'],
-					'size'=>$item['size'],
-					'lastModifiedDateTime'=>strtotime($item['lastModifiedDateTime']),
-					'downloadUrl'=>$item['@microsoft.graph.downloadUrl'],
-					'folder'=>empty($item['folder'])?false:true
-				);
+
+			if (config('sharepoint_proxy') == "true"){
+				foreach((array)$data['value'] as $item){
+					//var_dump($item);
+					$items[$item['name']] = array(
+						'name'=>$item['name'],
+						'size'=>$item['size'],
+						'lastModifiedDateTime'=>strtotime($item['lastModifiedDateTime']),
+						'downloadUrl'=>str_replace(config('sharepoint_link'),config('sharepoint_proxy_link'),$item['@microsoft.graph.downloadUrl']),
+						'folder'=>empty($item['folder'])?false:true
+					);
+				}
+			}
+			else{
+				foreach((array)$data['value'] as $item){
+					//var_dump($item);
+					$items[$item['name']] = array(
+						'name'=>$item['name'],
+						'size'=>$item['size'],
+						'lastModifiedDateTime'=>strtotime($item['lastModifiedDateTime']),
+						'downloadUrl'=>$item['@microsoft.graph.downloadUrl'],
+						'folder'=>empty($item['folder'])?false:true
+					);
+				}
 			}
 
 			if(!empty($data['@odata.nextLink'])){
