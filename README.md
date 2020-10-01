@@ -17,6 +17,18 @@
 ### 配置
 如果您在配置时在获取应用 ID 和密钥时遇到了困难，可以查看这篇文章: [OneIndex – 如何获取应用 ID 和密钥](https://zihangu.com/?p=718).
 
+## 如果您是从低版本 / 衍生版本迁移配置文件或忘记了密码
+自 v1.0.2 起，我们将密码存储方式更改为 MD5 加密。因此您可能无法将原密码直接用在 v1.0.2 及以上版本中。
+如果您需要迁移密码或忘记密码需要重置，您可以使用 ```md5-encode.py``` 工具。   
+您可能需要 Python3 和 hashlib 来执行这个小工具。
+```
+zihangu@ZihanGudeMacBook-Pro oneindex-tzg % python3 md5-encode.py 
+OneIndex - TZG 密码转换工具
+请输入您要设置的密码: ThisIsATestPassword
+MD5: a7954995b171fecdd7cbdc39995c827b
+请将 MD5 值复制到 config/base.php 的 password 中, 然后重新登录即可.
+```
+
 ## 遇到了问题和 Bug?
 请在此项目提交 [Issues](https://github.com/TheZihanGu/oneindex-tzg/issues) 以便我们进行跟进。如果您有一些想要实现的需求，也可以提交 [Issues](https://github.com/TheZihanGu/oneindex-tzg/issues) 来扔给我们。
 
