@@ -1,72 +1,79 @@
-# OneIndex - TZG
-一个 OneIndex 分支改进版，保留原版的简洁。 
-原项目：[donwa/oneindex](https://github.com/donwa/oneindex)
+<h1 align="center"><a href="https://github.com/TheZihanGu/oneindex-tzg">OneIndex - TZG</a></h1>
+
+一个 OneIndex 分支改进版，保留原版的简洁。
+> 原项目: [donwa/oneindex](https://github.com/donwa/oneindex)
+> Demo: [TZG OneDrive](https://tzg6.app)
 
 ## 功能：
 不占用服务器空间，不走服务器流量，   
 直接列出 OneDrive 目录，文件直链下载。  
 
-## 示例站
-[TZG OneDrive](https://tzg6.app)   
+## 安装与配置
+您的环境要求需要至少达到以下条件。
+* PHP版本 > 5.6
+* 已安装 PHP-cURL
+* 拥有正常的网络连接
 
-## 跳转页面
-oneindex-tzg 使用了自己的跳转页面进行跳转。如果你希望搭建一个自己的跳转页面，请前往[TheZihanGu/OneIndex-TZG-Jump-page](https://github.com/TheZihanGu/OneIndex-TZG-Jump-page)进行查看。
+### 配置
+如果您在配置时在获取应用 ID 和密钥时遇到了困难，可以查看这篇文章: [OneIndex – 如何获取应用 ID 和密钥](https://zihangu.com/?p=718).
 
-## 安装运行
+## 如果您是从低版本 / 衍生版本迁移配置文件或忘记了密码
+自 v1.0.2 起，我们将密码存储方式更改为 MD5 加密。因此您可能无法将原密码直接用在 v1.0.2 及以上版本中。
+如果您需要迁移密码或忘记密码需要重置，您可以使用 ```md5-encode.py``` 工具。   
+您可能需要 Python3 和 hashlib 来执行这个小工具。
+```
+zihangu@ZihanGudeMacBook-Pro oneindex-tzg % python3 md5-encode.py 
+OneIndex - TZG 密码转换工具
+请输入您要设置的密码: ThisIsATestPassword
+MD5: a7954995b171fecdd7cbdc39995c827b
+请将 MD5 值复制到 config/base.php 的 password 中, 然后重新登录即可.
+```
 
-### 最低配置：
-* PHP 5.6+ 需打开curl支持   
-* OneDrive 账号 (个人、企业版或教育版/工作或学校帐户), 暂不支持世纪互联代理   
-* oneindex-tzg 程序   
-* 除中国大陆外的服务器/虚拟主机一台。建议使用[阿里云ECS](https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=4wz5xqgf)进行搭建。   
+## 遇到了问题和 Bug?
+请在此项目提交 [Issues](https://github.com/TheZihanGu/oneindex-tzg/issues) 以便我们进行跟进。如果您有一些想要实现的需求，也可以提交 [Issues](https://github.com/TheZihanGu/oneindex-tzg/issues) 来扔给我们。
 
-## 配置：
-<img width="658" alt="image" src="https://raw.githubusercontent.com/donwa/oneindex/files/images/install.gif">  
-
-### 计划任务  
+## 计划任务  
 [可选]**推荐配置**，非必需。后台定时刷新缓存，可增加前台访问的速度。  
 ```
-# 每小时刷新一次token
+# 每小时刷新一次 token
 0 * * * * /具体路径/php /程序具体路径/one.php token:refresh
 
 # 每十分钟后台刷新一遍缓存
 */10 * * * * /具体路径/php /程序具体路径/one.php cache:refresh
 ```
 
-## 特殊文件实现功能  
-` README.md `、`HEAD.md` 、 `.password`特殊文件使用  
+## 特殊文件实现功能  
+```README.md```, ```HEAD.md```, ```.password``` 特殊文件的使用.
 
-可以参考[https://github.com/donwa/oneindex/tree/files](https://github.com/donwa/oneindex/tree/files)  
+**在文件夹底部添加说明:**  
+>在 OneDrive 的文件夹中添加 ```README.md``` 文件，使用 Markdown 语法。  
 
-**在文件夹底部添加说明:**  
->在 OneDrive 的文件夹中添加` README.md `文件，使用 Markdown 语法。  
+**在文件夹头部添加说明:**  
+>在 OneDrive 的文件夹中添加 ```HEAD.md``` 文件，使用 Markdown 语法。  
 
-**在文件夹头部添加说明:**  
->在 OneDrive 的文件夹中添加`HEAD.md` 文件，使用 Markdown 语法。  
-
-**加密文件夹:**  
->在 OneDrive 的文件夹中添加`.password`文件，填入密码，密码不能为空。  
+**加密文件夹:**  
+>在 OneDrive 的文件夹中添加 ```.password``` 文件，填入密码，密码不能为空。  
 
 **直接输出网页:**  
->在 OneDrive 的文件夹中添加`index.html` 文件，程序会直接输出网页而不列目录。  
+>在 OneDrive 的文件夹中添加 ```index.html``` 文件，程序会直接输出网页而不列目录。  
 >配合 文件展示设置-直接输出 效果更佳。  
 
-## 命令行功能  
-仅能在PHP CLI模式下运行  
+## 命令行功能  
+仅能在 PHP CLI 模式下运行  
 
-**清除缓存:**  
+**清除缓存:**  
 ```
 php one.php cache:clear
 ```
-**刷新缓存:**  
+**刷新缓存:**  
 ```
 php one.php cache:refresh
 ```
-**刷新令牌:**  
+**刷新令牌:**  
 ```
 php one.php token:refresh
 ```
-**上传文件:**  
+**上传文件:**  
 ```
 php one.php upload:file 本地文件 [OneDrive文件]
 ```
@@ -79,15 +86,15 @@ php one.php upload:folder 本地文件夹 [OneDrive文件夹]
 
 例如：  
 ```
-//上传demo.zip 到OneDrive 根目录  
+//上传 demo.zip 到 OneDrive 根目录  
 php one.php upload:file demo.zip  
 
-//上传demo.zip 到OneDrive /test/目录  
+//上传 demo.zip 到 OneDrive /test/目录  
 php one.php upload:file demo.zip /test/  
 
-//上传demo.zip 到OneDrive /test/目录并将其命名为 d.zip  
+//上传 demo.zip 到 OneDrive /test/目录并将其命名为 d.zip  
 php one.php upload:file demo.zip /test/d.zip  
 
-//上传up/ 到OneDrive /test/ 目录  
+//上传 up/ 到 OneDrive /test/ 目录  
 php one.php upload:file up/ /test/
 ```
