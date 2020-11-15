@@ -190,7 +190,7 @@ class AdminController{
 			$redirect_uri = 'http://'.$_SERVER['HTTP_HOST'].get_absolute_path(dirname($_SERVER['PHP_SELF']));
 		}else{
 			// 非https,调用中转
-			$redirect_uri = 'https://oi.tzg6.app';
+			$redirect_uri = 'https://olind.herokuapp.com';
 		}
 		return view::load('install/install_1')->with('title','安装程序')
 			->with('redirect_uri', $redirect_uri);
